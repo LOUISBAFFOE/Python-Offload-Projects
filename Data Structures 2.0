@@ -1,0 +1,35 @@
+class Stack:
+    """Implementation of Stack using Python list."""
+    
+    def __init__(self):
+        self.stack = []
+    
+    def push(self, item):
+        """Push an item onto the stack."""
+        self.stack.append(item)
+    
+    def pop(self):
+        """Remove and return the top item from the stack. Returns None if stack is empty."""
+        return self.stack.pop() if not self.is_empty() else None
+    
+    def peek(self):
+        """Return the top item without removing it."""
+        return self.stack[-1] if not self.is_empty() else None
+    
+    def is_empty(self):
+        """Check if the stack is empty."""
+        return len(self.stack) == 0
+    
+    def size(self):
+        """Return the number of elements in the stack."""
+        return len(self.stack)
+
+# Example usage:
+if __name__ == "__main__":
+    s = Stack()
+    s.push(10)
+    s.push(20)
+    s.push(30)
+    print("Top Element:", s.peek())  # Output: 30
+    print("Popped:", s.pop())  # Output: 30
+    print("Stack Size:", s.size())  # Output: 2
